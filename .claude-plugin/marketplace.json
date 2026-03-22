@@ -1,0 +1,92 @@
+{
+  "name": "payit2-plugins",
+  "owner": {
+    "name": "PayIt2",
+    "email": "help@payit2.com"
+  },
+  "metadata": {
+    "description": "Official PayIt2 plugin marketplace. AI-powered tools for fundraising campaign management, content automation, compliance, and donor engagement.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "payit2-campaign-manager",
+      "source": {
+        "source": "github",
+        "repo": "PayIt2/payit2-campaign-manager"
+      },
+      "description": "AI-powered fundraising campaign manager. Create campaigns, generate content, engage donors, and optimize performance through conversation with Claude.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Brian Anderson",
+        "email": "help@payit2.com"
+      },
+      "homepage": "https://payit2.com",
+      "repository": "https://github.com/PayIt2/payit2-campaign-manager",
+      "license": "MIT",
+      "keywords": ["fundraising", "crowdfunding", "campaigns", "donor-engagement", "legal-defense"],
+      "category": "productivity",
+      "tags": ["fundraising", "ai-campaign-manager", "crowdfunding", "nonprofit"]
+    },
+    {
+      "name": "payit2-blog-agent",
+      "source": {
+        "source": "github",
+        "repo": "PayIt2/payit2-blog-agent"
+      },
+      "description": "Autonomous blog agent that publishes SEO-optimized posts 2x per week targeting fundraising and legal defense keywords.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Brian Anderson",
+        "email": "help@payit2.com"
+      },
+      "keywords": ["blog", "seo", "content-automation", "fundraising"],
+      "category": "content"
+    },
+    {
+      "name": "payit2-newsletter-agent",
+      "source": {
+        "source": "github",
+        "repo": "PayIt2/payit2-newsletter-agent"
+      },
+      "description": "Autonomous weekly newsletter agent. Generates and distributes recurring newsletters to keep contributors and organizers engaged.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Brian Anderson",
+        "email": "help@payit2.com"
+      },
+      "keywords": ["newsletter", "email", "automation", "engagement"],
+      "category": "content"
+    },
+    {
+      "name": "payit2-compliance-agent",
+      "source": {
+        "source": "github",
+        "repo": "PayIt2/payit2-compliance-agent"
+      },
+      "description": "Stripe AUP compliance screening, monitoring, and enforcement for fundraising campaigns.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Brian Anderson",
+        "email": "help@payit2.com"
+      },
+      "keywords": ["compliance", "stripe", "risk-management", "screening"],
+      "category": "operations"
+    },
+    {
+      "name": "payit2-lookalike-marketer",
+      "source": {
+        "source": "github",
+        "repo": "PayIt2/payit2-lookalike-marketer"
+      },
+      "description": "Multi-channel audience analysis and campaign generation. Analyzes successful campaigns and builds lookalike audiences across email, LinkedIn, and social.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Brian Anderson",
+        "email": "help@payit2.com"
+      },
+      "keywords": ["marketing", "audience", "lookalike", "social-media", "email-campaigns"],
+      "category": "marketing"
+    }
+  ]
+}
