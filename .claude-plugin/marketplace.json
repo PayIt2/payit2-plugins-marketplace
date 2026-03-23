@@ -5,7 +5,7 @@
     "email": "help@payit2.com"
   },
   "metadata": {
-    "description": "Official PayIt2 plugin marketplace. AI-powered tools for fundraising campaign management, content automation, compliance, and donor engagement.",
+    "description": "Index of AI-powered Claude plugins for the PayIt2 fundraising platform.",
     "version": "0.1.0"
   },
   "plugins": [
@@ -15,18 +15,9 @@
         "source": "github",
         "repo": "PayIt2/payit2-campaign-manager"
       },
-      "description": "AI-powered fundraising campaign manager. Create campaigns, generate content, engage donors, and optimize performance through conversation with Claude.",
+      "description": "AI-powered fundraising campaign manager. Create campaigns, generate content, engage donors, and optimize performance.",
       "version": "0.1.0",
-      "author": {
-        "name": "Brian Anderson",
-        "email": "help@payit2.com"
-      },
-      "homepage": "https://payit2.com",
-      "repository": "https://github.com/PayIt2/payit2-campaign-manager",
-      "license": "MIT",
-      "keywords": ["fundraising", "crowdfunding", "campaigns", "donor-engagement", "legal-defense"],
-      "category": "productivity",
-      "tags": ["fundraising", "ai-campaign-manager", "crowdfunding", "nonprofit"]
+      "category": "productivity"
     }
   ]
 }

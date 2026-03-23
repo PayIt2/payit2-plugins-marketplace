@@ -1,30 +1,16 @@
 # PayIt2 Plugin Marketplace
 
-Official Claude plugin marketplace for [PayIt2.com](https://payit2.com). AI-powered tools for fundraising campaign management, content automation, compliance, and donor engagement.
-
-## Add This Marketplace
-
-```
-/plugin marketplace add PayIt2/payit2-plugins-marketplace
-```
+Index of AI-powered Claude plugins for the [PayIt2](https://payit2.com) fundraising platform.
 
 ## Available Plugins
 
-| Plugin | Description | Category |
-|--------|-------------|----------|
-| **payit2-campaign-manager** | AI fundraising coach and campaign manager with 4 skills, 4 commands, and 4 agents | Productivity |
-
-## Install a Plugin
-
-After adding the marketplace, install any plugin:
-
-```
-/plugin install payit2-campaign-manager@payit2-plugins
-```
+| Plugin | Repo | Description |
+|--------|------|-------------|
+| **payit2-campaign-manager** | [PayIt2/payit2-campaign-manager](https://github.com/PayIt2/payit2-campaign-manager) | AI fundraising coach and campaign manager |
 
 ## About PayIt2
 
-PayIt2 is an online payment collection platform founded in 2007 in Grand Rapids, MI. We help organizers of events, fundraisers, clubs, and group activities collect payments from participants. Our AI-powered tools make campaign creation and management accessible to everyone.
+PayIt2 is an online payment collection platform founded in 2007 in Grand Rapids, MI. We help organizers of events, fundraisers, clubs, and group activities collect payments from participants.
 
 ## Author
 
