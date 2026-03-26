@@ -6,9 +6,9 @@ Index of AI-powered Claude plugins for the [PayIt2](https://payit2.com) platform
 
 | Plugin | Repo | Description |
 |--------|------|-------------|
-| **PayIt2 Campaign Manager** | [PayIt2/payit2-campaign-manager](https://github.com/PayIt2/payit2-campaign-manager) | AI-powered coach for fundraisers, events, and group collections. 6 skills, 6 commands, 5 agents. |
+| **PayIt2 Campaign Coach** | [PayIt2/payit2-campaign-coach](https://github.com/PayIt2/payit2-campaign-coach) | AI-powered coach for fundraisers, events, and group collections. 6 skills, 6 commands, 5 agents. |
 
-### PayIt2 Campaign Manager
+### PayIt2 Campaign Coach
 
 Your AI coach for everything on PayIt2 — fundraising campaigns, event ticketing, and group payment collection.
 
@@ -25,7 +25,7 @@ Your AI coach for everything on PayIt2 — fundraising campaigns, event ticketin
 - *"I'm organizing a charity golf tournament for 120 people."*
 - *"I need to collect $200 from 25 teammates for new uniforms."*
 
-[View on GitHub](https://github.com/PayIt2/payit2-campaign-manager) · [Install instructions](https://github.com/PayIt2/payit2-campaign-manager#for-users-how-to-install)
+[View on GitHub](https://github.com/PayIt2/payit2-campaign-coach) · [Install instructions](https://github.com/PayIt2/payit2-campaign-coach#for-users-how-to-install)
 
 ## About PayIt2
 

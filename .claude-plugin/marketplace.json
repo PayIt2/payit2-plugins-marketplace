@@ -10,12 +10,12 @@
   },
   "plugins": [
     {
-      "name": "payit2-campaign-manager",
+      "name": "payit2-campaign-coach",
       "source": {
         "source": "github",
-        "repo": "PayIt2/payit2-campaign-manager"
+        "repo": "PayIt2/payit2-campaign-coach"
       },
-      "description": "AI-powered fundraising campaign manager. Create campaigns, generate content, engage donors, and optimize performance.",
+      "description": "AI-powered fundraising campaign coach. Create campaigns, generate content, engage donors, and optimize performance.",
       "version": "0.1.0",
       "category": "productivity"
     }
