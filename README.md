@@ -4,9 +4,9 @@ Index of AI-powered Claude plugins for the [PayIt2](https://payit2.com) platform
 
 ## Available Plugins
 
-| Plugin | Source | Description |
-|--------|--------|-------------|
-| **PayIt2 Campaign Coach** | [payit2-campaign-coach/](./payit2-campaign-coach) | AI-powered coach for fundraisers, events, and group collections. 5 skills, 4 commands, 3 agents. |
+| Plugin | Download | Description |
+|--------|----------|-------------|
+| **PayIt2 Campaign Coach** | [Latest Release](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-campaign-coach.zip) | AI-powered coach for fundraisers, events, and group collections. 5 skills, 4 commands, 3 agents. |
 
 ### PayIt2 Campaign Coach
 
