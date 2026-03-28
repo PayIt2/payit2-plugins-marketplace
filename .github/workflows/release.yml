@@ -1,0 +1,34 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  attach-plugin-zip:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download plugin zip from payit2-campaign-coach
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Download the zip from the matching release tag on campaign-coach.
+          # Falls back to the latest release if the tag doesn't exist there.
+          gh release download "$GITHUB_REF_NAME" \
+            --repo PayIt2/payit2-campaign-coach \
+            --pattern "payit2-campaign-coach.zip" \
+            --output payit2-campaign-coach.zip \
+            || gh release download --repo PayIt2/payit2-campaign-coach \
+               --pattern "payit2-campaign-coach.zip" \
+               --output payit2-campaign-coach.zip
+
+      - name: Upload zip to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "$GITHUB_REF_NAME" \
+            --repo PayIt2/payit2-plugins-marketplace \
+            payit2-campaign-coach.zip --clobber
