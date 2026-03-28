@@ -19,19 +19,19 @@ Your AI coach for everything on PayIt2: fundraising campaigns, event ticketing, 
 
 ### Install
 
-Download the latest release:
+Download the marketplace:
 
-[payit2-campaign-coach.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-campaign-coach.zip)
+[payit2-plugins-marketplace (zip)](https://github.com/PayIt2/payit2-plugins-marketplace/archive/refs/heads/main.zip)
 
 **Claude Desktop:**
-1. Download and unzip `payit2-campaign-coach.zip`
+1. Download and unzip `payit2-plugins-marketplace`
 2. Open Claude Desktop, go to **Settings > Plugins**
-3. Click **Install from folder** and select the unzipped `payit2-campaign-coach` directory
+3. Click **Install from folder** and select the unzipped `payit2-plugins-marketplace` directory
 
 **Claude Code (CLI):**
 ```bash
-curl -L https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-campaign-coach.zip -o payit2-campaign-coach.zip
-unzip payit2-campaign-coach.zip -d ~/.claude/plugins/payit2-campaign-coach
+curl -L https://github.com/PayIt2/payit2-plugins-marketplace/archive/refs/heads/main.zip -o payit2-plugins-marketplace.zip
+unzip payit2-plugins-marketplace.zip -d ~/.claude/plugins/payit2-plugins-marketplace
 ```
 
 ## About PayIt2
