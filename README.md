@@ -53,7 +53,7 @@ unzip payit2-plugins-marketplace.zip -d ~/.claude/plugins/payit2-plugins-marketp
 
 ## About PayIt2
 
-PayIt2 is an online payment collection platform founded in 2007 in Grand Rapids, MI. We help organizers of events, fundraisers, clubs, and group activities collect payments from participants.
+PayIt2 is an online payment collection platform founded in 2007 in Grand Rapids, MI. We help organizers of events, fundraisers, clubs, and group activities collect payments from supporters.
 
 **Website:** [payit2.com](https://www.payit2.com)
 
