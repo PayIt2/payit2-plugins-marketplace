@@ -5,7 +5,7 @@
   },
   "plugins": [
     {
-      "name": "payit2-campaign-coach",
+      "name": "PayIt2 Campaign Coach",
       "source": "./payit2-campaign-coach",
       "description": "AI-powered campaign coach for PayIt2.com. Create, promote, and optimize fundraisers, events, and group collections through conversation with Claude."
     }
