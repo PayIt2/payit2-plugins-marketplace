@@ -1,5 +1,5 @@
 {
-  "name": "payit2-plugins",
+  "name": "PayIt2",
   "owner": {
     "name": "PayIt2"
   },
@@ -7,7 +7,7 @@
     {
       "name": "payit2-campaign-coach",
       "source": "./payit2-campaign-coach",
-      "description": "AI-powered fundraising campaign coach. Create campaigns, generate content, engage donors, and optimize performance."
+      "description": "AI-powered campaign coach for PayIt2.com. Create, promote, and optimize fundraisers, events, and group collections through conversation with Claude."
     }
   ]
 }
