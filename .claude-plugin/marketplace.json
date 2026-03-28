@@ -1,23 +1,13 @@
 {
   "name": "payit2-plugins",
   "owner": {
-    "name": "PayIt2",
-    "email": "help@payit2.com"
-  },
-  "metadata": {
-    "description": "Index of AI-powered Claude plugins for the PayIt2 fundraising platform.",
-    "version": "0.1.0"
+    "name": "PayIt2"
   },
   "plugins": [
     {
       "name": "payit2-campaign-coach",
-      "source": {
-        "source": "github",
-        "repo": "PayIt2/payit2-campaign-coach"
-      },
-      "description": "AI-powered fundraising campaign coach. Create campaigns, generate content, engage donors, and optimize performance.",
-      "version": "0.1.0",
-      "category": "productivity"
+      "source": "./payit2-campaign-coach",
+      "description": "AI-powered fundraising campaign coach. Create campaigns, generate content, engage donors, and optimize performance."
     }
   ]
 }
