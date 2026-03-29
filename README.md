@@ -30,7 +30,7 @@ Add the PayIt2 marketplace, then install the plugin:
 
 **Claude Desktop:**
 
-Go to **Settings > Plugins**, click **Add Plugin**, and point it to this repo or download the [zip file](https://github.com/PayIt2/payit2-plugins-marketplace/archive/refs/heads/main.zip) and select the `payit2-campaign-coach` folder.
+Go to **Settings > Plugins**, click **Add Plugin**, and point it to this repo or download the [zip file](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-campaign-coach.zip) and install it.
 
 ## Install Full Marketplace
 
@@ -46,7 +46,7 @@ Then browse and install plugins with `/plugin`.
 
 **Claude Desktop:**
 
-Go to **Settings > Plugins**, click **Add Plugin**, and point it to this repo or download the [zip file](https://github.com/PayIt2/payit2-plugins-marketplace/archive/refs/heads/main.zip) and select the unzipped folder.
+Go to **Settings > Plugins**, click **Add Plugin**, and point it to this repo or download the [zip file](https://github.com/PayIt2/payit2-plugins-marketplace/archive/refs/heads/main.zip) and install it.
 
 ## About PayIt2
 
