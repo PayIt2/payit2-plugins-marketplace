@@ -4,10 +4,10 @@ AI-powered Claude plugins for the [PayIt2](https://payit2.com) platform.
 
 ## PayIt2 Campaign Coach
 
-Your AI coach for everything on PayIt2: fundraising campaigns, event ticketing, and group payment collection. 5 skills, 4 commands, 3 agents.
+Your AI coach for everything on PayIt2: fundraisers, events, and groups. 5 skills, 4 commands, 3 agents.
 
 **Commands:**
-- `/campaign` - Build any campaign from scratch: fundraiser, event, or group collection
+- `/campaign` - Build any campaign from scratch: fundraiser, event, or group
 - `/promote` - Generate a full promotion package with social posts, emails, content calendar, and SEO
 - `/check-in` - Health check with score, diagnosis, and specific action items
 - `/engage` - Personalized messages for supporters: thank-yous, updates, re-engagement, and follow-ups
