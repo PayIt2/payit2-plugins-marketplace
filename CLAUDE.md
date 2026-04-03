@@ -32,10 +32,4 @@ The release workflow (`.github/workflows/release.yml`) runs on GitHub release cr
 
 ## Git Workflow
 
-1. Create a feature branch: `git checkout -b feat/<description>` (or `fix/`, `chore/`, `docs/`)
-2. Make changes and commit (no Co-Authored-By)
-3. Push the branch: `git push -u origin <branch>`
-4. Open a PR: `gh pr create`
-5. Merge the PR: `gh pr merge`
-6. Post-merge cleanup: `git checkout main && git pull && git branch -d <branch>`
-7. Verify clean state: `git status` (clean tree, up to date) and `git branch` (no stale branches)
+See PLATFORM-STANDARDS.md Section 15 for the full git workflow.
