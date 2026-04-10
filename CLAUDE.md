@@ -1,6 +1,6 @@
 # Org-Wide Standards
 
-> **MANDATORY SESSION START:** Read `../payit2-business/PLATFORM-STANDARDS.md` in full before any work. Clone if not present: `git clone https://github.com/PayIt2/payit2-business.git` from parent directory. Also run `git pull` and read `OPEN_ITEMS.md` before starting.
+> **MANDATORY SESSION START:** Read `../payit2-business/PLATFORM-STANDARDS.md` in full before any work. Clone if not present: `git clone https://github.com/PayIt2/payit2-business.git` from parent directory. Also run `git pull` and read `docs/OPEN_ITEMS.md` before starting.
 
 All org-wide rules (security, testing, AWS, notifications, images, git workflow, terminology) are in PLATFORM-STANDARDS.md. What follows is specific to this repo.
 
@@ -16,6 +16,7 @@ This repo is the PayIt2 Plugin Marketplace. It indexes and distributes Claude pl
 .claude-plugin/marketplace.json   # Marketplace manifest (lists all plugins)
 payit2-campaign-coach/            # Campaign Coach plugin (source files)
 payit2-campaign-coach.zip         # Pre-built plugin zip
+docs/                             # OPEN_ITEMS.md, COMPLETED_ITEMS.md
 .github/workflows/release.yml    # Release automation
 ```
 

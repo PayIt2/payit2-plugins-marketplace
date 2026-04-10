@@ -2,51 +2,61 @@
 
 AI-powered Claude plugins for the [PayIt2](https://payit2.com) platform.
 
-## PayIt2 Campaign Coach
+## PayIt2 Campaign Coach v1.2
 
-Your AI coach for everything on PayIt2: fundraisers, events, and groups. 5 skills, 4 commands, 3 agents.
+Your AI coach for everything on PayIt2: fundraisers, events, and groups. 5 skills, 4 commands, 3 agents - now with MCP integration and session hooks.
 
-**Commands:**
-- `/campaign` - Build any campaign from scratch: fundraiser, event, or group
-- `/promote` - Generate a full promotion package with social posts, emails, content calendar, and SEO
-- `/check-in` - Health check with score, diagnosis, and specific action items
-- `/engage` - Personalized messages for supporters: thank-yous, updates, re-engagement, and follow-ups
+### What's New in v1.2
 
-**Example prompts:**
-- *"Help me raise $15,000 for my neighbor's family after a house fire."*
-- *"I'm organizing a charity golf tournament for 120 people."*
-- *"I need to collect $200 from 25 teammates for new uniforms."*
+- **MCP server integration** for live PayIt2 API connectivity
+- **Session hooks** for automatic context loading, campaign URL detection, and session summaries
+- **Updated agents** with improved coaching and content generation
+
+### Commands
+
+| Command | What it does |
+|---------|-------------|
+| `/campaign` | Build any campaign from scratch - fundraiser, event, or group - with story, title, goal, ticketing, cost-splitting, and launch strategy |
+| `/promote` | Generate a complete promotion package: social posts, email sequences, content calendar, and SEO recommendations |
+| `/check-in` | Health check on any active campaign with a score, diagnosis, and specific action items |
+| `/engage` | Personalized messages for supporters: thank-yous, updates, re-engagement, share requests, and follow-ups |
+
+### Example Prompts
+
+- *"My neighbor's house burned down. Help me raise $15,000 for her family."*
+- *"I'm organizing a charity golf tournament for 120 people. Help me set up ticketing."*
+- *"I need to collect $200 from each of 25 teammates for new uniforms."*
+- *"My campaign has been live 2 weeks and donations have stalled. What do I do?"*
+- *"Write a week's worth of social posts for my campaign - we just hit 50%."*
 
 ### Install
 
-**Claude Code (CLI):**
-
-Add the PayIt2 marketplace, then install the plugin:
-
-```bash
-/plugin marketplace add PayIt2/payit2-plugins-marketplace
-/plugin install payit2-campaign-coach@PayIt2/payit2-plugins-marketplace
-```
-
-**Claude Desktop:**
-
-Open the **Customize** menu (under the co-work or code tabs), click **Add Plugin**, and point it to this repo or download the [zip file](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-campaign-coach.zip) and install it.
-
-## Install Full Marketplace
-
-Install all PayIt2 plugins at once:
+**Download:** Grab the [latest zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-campaign-coach.zip) from the releases page.
 
 **Claude Code (CLI):**
 
 ```bash
-/plugin marketplace add PayIt2/payit2-plugins-marketplace
+claude plugin install payit2-campaign-coach@marketplace
 ```
 
-Then browse and install plugins with `/plugin`.
+Or load for a single session:
 
-**Claude Desktop:**
+```bash
+claude --plugin-dir ./payit2-campaign-coach
+```
 
-Open the **Customize** menu (under the co-work or code tabs), click **Add Plugin**, and point it to this repo or download the [zip file](https://github.com/PayIt2/payit2-plugins-marketplace/archive/refs/heads/main.zip) and install it.
+### Plugin Structure
+
+```
+payit2-campaign-coach/
+  .claude-plugin/plugin.json    # Plugin manifest (v1.2.0)
+  .mcp.json                     # MCP server configuration
+  hooks/hooks.json              # Session and event hooks
+  scripts/                      # Hook helper scripts
+  skills/                       # 5 workflow skills
+  commands/                     # 4 slash commands
+  agents/                       # 3 autonomous agents
+```
 
 ## About PayIt2
 
