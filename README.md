@@ -58,6 +58,10 @@ payit2-campaign-coach/
   agents/                       # 3 autonomous agents
 ```
 
+## Install Full Marketplace
+
+Install all PayIt2 plugins at once by downloading the [full marketplace zip](https://github.com/PayIt2/payit2-plugins-marketplace/archive/refs/heads/main.zip).
+
 ## About PayIt2
 
 PayIt2 is an online payment collection platform founded in 2007 in Grand Rapids, MI. We help organizers of events, fundraisers, clubs, and group activities collect payments from supporters.
