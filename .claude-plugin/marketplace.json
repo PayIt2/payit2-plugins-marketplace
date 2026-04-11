@@ -6,7 +6,13 @@
   "plugins": [
     {
       "name": "payit2-campaign-coach",
-      "source": "./payit2-campaign-coach",
+      "source": {
+        "source": "git-subdir",
+        "url": "PayIt2/payit2-campaign-coach",
+        "path": "plugin",
+        "ref": "main",
+        "sha": "f13279b"
+      },
       "description": "AI-powered campaign coach for PayIt2.com. Create, promote, and optimize any campaign type: fundraisers, events, and groups. Get coaching, generate content, and engage supporters through conversation with Claude."
     }
   ]
