@@ -65,7 +65,7 @@ bash scripts/build-zips.sh
 
 ## About PayIt2
 
-PayIt2 is an online payment collection platform founded in 2007. We've helped organizers raise and collect millions of dollars across fundraisers, events, clubs, and group activities.
+PayIt2 is an online payment collection platform that has helped raise millions. We make it easy for organizers to collect payments for fundraisers, events, and group activities.
 
 **Website:** [payit2.com](https://www.payit2.com)
 
