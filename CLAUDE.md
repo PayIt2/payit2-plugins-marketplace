@@ -15,17 +15,26 @@ This repo is the PayIt2 Plugin Marketplace. It indexes and distributes Claude pl
 ```
 .claude-plugin/marketplace.json   # Marketplace manifest (lists all plugins)
 payit2-campaign-coach/            # Campaign Coach plugin (source files)
-payit2-campaign-coach.zip         # Pre-built plugin zip
+scripts/build-zips.sh             # Build script for all distributable zips
+dist/                             # Build output (gitignored)
 docs/                             # OPEN_ITEMS.md, COMPLETED_ITEMS.md
 .github/workflows/release.yml    # Release automation
 ```
+
+## Building Zips
+
+Run `bash scripts/build-zips.sh` to produce:
+- `dist/payit2-campaign-coach.zip` - full plugin zip (for "Upload plugin" flow)
+- `dist/skills/<name>.zip` - individual skill zips (for "Upload skill" flow)
+
+Each skill zip contains exactly one SKILL.md inside a top-level folder.
 
 ## Adding or Updating Plugins
 
 1. Update plugin source files in the plugin's subdirectory
 2. Update `marketplace.json` if adding a new plugin
-3. Rebuild the plugin zip if applicable
-4. Commit all changed files together
+3. Run `bash scripts/build-zips.sh` to rebuild
+4. Commit source changes (zips are built by CI on release)
 
 ## Releases
 

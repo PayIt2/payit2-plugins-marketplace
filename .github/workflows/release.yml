@@ -5,30 +5,27 @@ on:
     types: [published]
 
 jobs:
-  attach-plugin-zip:
+  build-and-attach:
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
-      - name: Download plugin zip from payit2-campaign-coach
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # Download the zip from the matching release tag on campaign-coach.
-          # Falls back to the latest release if the tag doesn't exist there.
-          gh release download "$GITHUB_REF_NAME" \
-            --repo PayIt2/payit2-campaign-coach \
-            --pattern "payit2-campaign-coach.zip" \
-            --output payit2-campaign-coach.zip \
-            || gh release download --repo PayIt2/payit2-campaign-coach \
-               --pattern "payit2-campaign-coach.zip" \
-               --output payit2-campaign-coach.zip
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Upload zip to release
+      - name: Build plugin and skill zips
+        run: bash scripts/build-zips.sh
+
+      - name: Upload zips to release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # Attach full plugin zip
           gh release upload "$GITHUB_REF_NAME" \
-            --repo PayIt2/payit2-plugins-marketplace \
-            payit2-campaign-coach.zip --clobber
+            dist/payit2-campaign-coach.zip --clobber
+
+          # Attach individual skill zips
+          for zip in dist/skills/*.zip; do
+            gh release upload "$GITHUB_REF_NAME" "$zip" --clobber
+          done
