@@ -30,12 +30,19 @@ cd "$REPO_ROOT"
 echo "Built: dist/payit2-campaign-coach-plugin.zip"
 
 # --- Marketplace zip ---
-# Contains marketplace manifest only. Plugins are fetched via git source URLs.
+# Same as plugin zip but with marketplace.json added alongside plugin.json.
 staging=$(mktemp -d)
-mkdir -p "$staging/.claude-plugin"
+cd "$PLUGIN_DIR"
+find . -not -name '.DS_Store' -not -path './.DS_Store' | while read -r f; do
+  if [ -d "$f" ]; then
+    mkdir -p "$staging/$f"
+  else
+    cp "$f" "$staging/$f"
+  fi
+done
 cp "$REPO_ROOT/.claude-plugin/marketplace.json" "$staging/.claude-plugin/"
 cd "$staging"
-zip -r "$DIST_DIR/payit2-plugins-marketplace.zip" . > /dev/null
+zip -r "$DIST_DIR/payit2-plugins-marketplace.zip" . -x "*.DS_Store" > /dev/null
 cd "$REPO_ROOT"
 rm -rf "$staging"
 echo "Built: dist/payit2-plugins-marketplace.zip"
