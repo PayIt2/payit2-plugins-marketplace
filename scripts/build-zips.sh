@@ -20,13 +20,25 @@ rm -rf "$DIST_DIR"
 mkdir -p "$DIST_DIR/skills"
 
 # --- Marketplace zip ---
-# Contains the manifest and all plugin folders.
+# Stage a flat structure: marketplace manifest + plugin contents (no wrapper).
+staging=$(mktemp -d)
+cp -R "$REPO_ROOT/.claude-plugin" "$staging/.claude-plugin"
+for plugin_dir in "$REPO_ROOT"/payit2-*/; do
+  plugin_name=$(basename "$plugin_dir")
+  mkdir -p "$staging/$plugin_name"
+  # Copy plugin contents into the named directory
+  (cd "$plugin_dir" && find . -not -name '.DS_Store' -not -name '.' | while read -r f; do
+    if [ -d "$plugin_dir/$f" ]; then
+      mkdir -p "$staging/$plugin_name/$f"
+    else
+      cp "$plugin_dir/$f" "$staging/$plugin_name/$f"
+    fi
+  done)
+done
+cd "$staging"
+zip -r "$DIST_DIR/payit2-plugins-marketplace.zip" . -x "*.DS_Store" > /dev/null
 cd "$REPO_ROOT"
-zip -r "$DIST_DIR/payit2-plugins-marketplace.zip" \
-  .claude-plugin/marketplace.json \
-  payit2-campaign-coach/ \
-  -x "*/.*DS_Store" \
-  > /dev/null
+rm -rf "$staging"
 echo "Built: dist/payit2-plugins-marketplace.zip"
 
 # --- Full plugin zip ---
