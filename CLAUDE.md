@@ -25,8 +25,8 @@ docs/                             # OPEN_ITEMS.md, COMPLETED_ITEMS.md
 
 Run `bash scripts/build-zips.sh` to produce:
 - `dist/payit2-plugins-marketplace.zip` - full marketplace (for "Upload to a new marketplace")
-- `dist/payit2-campaign-coach.zip` - full plugin (for "Add to an existing marketplace")
-- `dist/skills/<name>.zip` - individual skill zips (for "Upload skill" flow)
+- `dist/payit2-campaign-coach-plugin.zip` - full plugin (for "Add to an existing marketplace")
+- `dist/skills/<name>-skill.zip` - individual skill zips (for "Upload skill" flow)
 
 Each skill zip contains exactly one SKILL.md inside a top-level folder.
 

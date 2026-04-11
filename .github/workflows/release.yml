@@ -24,7 +24,7 @@ jobs:
           # Attach marketplace zip and full plugin zip
           gh release upload "$GITHUB_REF_NAME" \
             dist/payit2-plugins-marketplace.zip \
-            dist/payit2-campaign-coach.zip --clobber
+            dist/payit2-campaign-coach-plugin.zip --clobber
 
           # Attach individual skill zips
           for zip in dist/skills/*.zip; do

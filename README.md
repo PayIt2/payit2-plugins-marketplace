@@ -31,7 +31,7 @@ Your AI coach for everything on PayIt2: fundraisers, events, and groups. 5 skill
 
 ### Install
 
-**Download:** Grab the [latest zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-campaign-coach.zip) from the releases page.
+**Download:** Grab the [latest zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-campaign-coach-plugin.zip) from the releases page.
 
 **Claude Code (CLI):**
 
