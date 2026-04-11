@@ -21,8 +21,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Attach full plugin zip
+          # Attach marketplace zip and full plugin zip
           gh release upload "$GITHUB_REF_NAME" \
+            dist/payit2-plugins-marketplace.zip \
             dist/payit2-campaign-coach.zip --clobber
 
           # Attach individual skill zips

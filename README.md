@@ -60,7 +60,7 @@ payit2-campaign-coach/
 
 ## Install Full Marketplace
 
-Install all PayIt2 plugins at once by downloading the [full marketplace zip](https://github.com/PayIt2/payit2-plugins-marketplace/archive/refs/heads/main.zip).
+Install all PayIt2 plugins at once by downloading the [full marketplace zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-plugins-marketplace.zip) from the releases page.
 
 ## About PayIt2
 

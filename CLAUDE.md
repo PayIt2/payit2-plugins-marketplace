@@ -24,7 +24,8 @@ docs/                             # OPEN_ITEMS.md, COMPLETED_ITEMS.md
 ## Building Zips
 
 Run `bash scripts/build-zips.sh` to produce:
-- `dist/payit2-campaign-coach.zip` - full plugin zip (for "Upload plugin" flow)
+- `dist/payit2-plugins-marketplace.zip` - full marketplace (for "Upload to a new marketplace")
+- `dist/payit2-campaign-coach.zip` - full plugin (for "Add to an existing marketplace")
 - `dist/skills/<name>.zip` - individual skill zips (for "Upload skill" flow)
 
 Each skill zip contains exactly one SKILL.md inside a top-level folder.
@@ -38,7 +39,7 @@ Each skill zip contains exactly one SKILL.md inside a top-level folder.
 
 ## Releases
 
-The release workflow (`.github/workflows/release.yml`) runs on GitHub release creation. It downloads the plugin zip from the source repo's matching release tag and attaches it to the marketplace release.
+The release workflow (`.github/workflows/release.yml`) runs on GitHub release creation. It checks out the repo, runs `scripts/build-zips.sh`, and attaches all zips (marketplace, plugin, and individual skills) to the release.
 
 ## Git Workflow
 
