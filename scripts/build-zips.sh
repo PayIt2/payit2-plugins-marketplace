@@ -30,11 +30,13 @@ zip -r "$DIST_DIR/payit2-plugins-marketplace.zip" \
 echo "Built: dist/payit2-plugins-marketplace.zip"
 
 # --- Full plugin zip ---
-# All files must be inside a top-level folder named after the plugin.
+# Zip contents of plugin directory (no wrapper folder), matching official plugin format.
+cd "$PLUGIN_DIR"
 zip -r "$DIST_DIR/payit2-campaign-coach-plugin.zip" \
-  payit2-campaign-coach/ \
-  -x "*/.*DS_Store" \
+  . \
+  -x "*.DS_Store" \
   > /dev/null
+cd "$REPO_ROOT"
 echo "Built: dist/payit2-campaign-coach-plugin.zip"
 
 # --- Individual skill zips ---
