@@ -11,8 +11,15 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout repo
+      - name: Checkout marketplace repo
         uses: actions/checkout@v4
+
+      - name: Checkout campaign-coach source repo
+        uses: actions/checkout@v4
+        with:
+          repository: PayIt2/payit2-campaign-coach
+          path: ../payit2-campaign-coach
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build plugin and skill zips
         run: bash scripts/build-zips.sh
@@ -21,12 +28,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Attach marketplace zip and full plugin zip
           gh release upload "$GITHUB_REF_NAME" \
             dist/payit2-plugins-marketplace.zip \
             dist/payit2-campaign-coach-plugin.zip --clobber
 
-          # Attach individual skill zips
           for zip in dist/skills/*.zip; do
             gh release upload "$GITHUB_REF_NAME" "$zip" --clobber
           done

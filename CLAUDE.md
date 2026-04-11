@@ -13,33 +13,37 @@ This repo is the PayIt2 Plugin Marketplace. It indexes and distributes Claude pl
 ## Structure
 
 ```
-.claude-plugin/marketplace.json   # Marketplace manifest (lists all plugins)
-payit2-campaign-coach/            # Campaign Coach plugin (source files)
-scripts/build-zips.sh             # Build script for all distributable zips
+.claude-plugin/marketplace.json   # Marketplace manifest
+scripts/build-zips.sh             # Build script (pulls from source repos)
 dist/                             # Build output (gitignored)
 docs/                             # OPEN_ITEMS.md, COMPLETED_ITEMS.md
 .github/workflows/release.yml    # Release automation
 ```
 
+No plugin source files live here. The build script pulls from sibling source repos (e.g. `../payit2-campaign-coach/plugin/`).
+
 ## Building Zips
 
-Run `bash scripts/build-zips.sh` to produce:
-- `dist/payit2-plugins-marketplace.zip` - full marketplace (for "Upload to a new marketplace")
-- `dist/payit2-campaign-coach-plugin.zip` - full plugin (for "Add to an existing marketplace")
-- `dist/skills/<name>-skill.zip` - individual skill zips (for "Upload skill" flow)
+Requires sibling repo `payit2-campaign-coach` to be cloned. Then run:
 
-Each skill zip contains exactly one SKILL.md inside a top-level folder.
+```bash
+bash scripts/build-zips.sh
+```
+
+Produces:
+- `dist/payit2-plugins-marketplace.zip` - full marketplace (for "Upload to a new marketplace")
+- `dist/payit2-campaign-coach-plugin.zip` - full plugin (for "Upload plugin" flow)
+- `dist/skills/<name>-skill.zip` - individual skill zips (for "Upload skill" flow)
 
 ## Adding or Updating Plugins
 
-1. Update plugin source files in the plugin's subdirectory
+1. Make changes in the source repo (e.g. `payit2-campaign-coach`)
 2. Update `marketplace.json` if adding a new plugin
-3. Run `bash scripts/build-zips.sh` to rebuild
-4. Commit source changes (zips are built by CI on release)
+3. Run `bash scripts/build-zips.sh` to rebuild from source
 
 ## Releases
 
-The release workflow (`.github/workflows/release.yml`) runs on GitHub release creation. It checks out the repo, runs `scripts/build-zips.sh`, and attaches all zips (marketplace, plugin, and individual skills) to the release.
+The release workflow checks out both this repo and the source repo, runs the build script, and attaches all zips to the release.
 
 ## Git Workflow
 
