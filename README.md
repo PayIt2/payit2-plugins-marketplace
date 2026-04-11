@@ -4,19 +4,35 @@ AI-powered Claude plugins for the [PayIt2](https://payit2.com) platform.
 
 ## PayIt2 Campaign Coach v1.2
 
-Your AI coach for everything on PayIt2: fundraisers, events, and groups. 5 skills, 4 commands, 3 agents - now with MCP integration and session hooks.
+Your AI coach for everything on PayIt2: fundraisers, events, and groups. 5 skills, 4 commands, 3 agents with MCP integration and session hooks.
 
-### What's New in v1.2
+### Install
 
-- **MCP server integration** for live PayIt2 API connectivity
-- **Session hooks** for automatic context loading, campaign URL detection, and session summaries
-- **Updated agents** with improved coaching and content generation
+**Full marketplace** (includes all PayIt2 plugins):
+
+Download [payit2-plugins-marketplace.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-plugins-marketplace.zip) and upload via Settings > Plugins > Upload to a new marketplace.
+
+**Single plugin:**
+
+Download [payit2-campaign-coach-plugin.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-campaign-coach-plugin.zip) and upload via Settings > Plugins > Upload plugin.
+
+**Individual skills:**
+
+| Skill | Download |
+|-------|----------|
+| Campaign Creation | [campaign-creation-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-creation-skill.zip) |
+| Campaign Analytics | [campaign-analytics-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-analytics-skill.zip) |
+| Campaign Promotion | [campaign-promotion-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-promotion-skill.zip) |
+| Campaign Context | [campaign-context-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-context-skill.zip) |
+| Supporter Engagement | [supporter-engagement-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/supporter-engagement-skill.zip) |
+
+Upload any skill zip via Settings > Plugins > Upload skill.
 
 ### Commands
 
 | Command | What it does |
 |---------|-------------|
-| `/campaign` | Build any campaign from scratch - fundraiser, event, or group - with story, title, goal, ticketing, cost-splitting, and launch strategy |
+| `/campaign` | Build any campaign from scratch with story, title, goal, ticketing, cost-splitting, and launch strategy |
 | `/promote` | Generate a complete promotion package: social posts, email sequences, content calendar, and SEO recommendations |
 | `/check-in` | Health check on any active campaign with a score, diagnosis, and specific action items |
 | `/engage` | Personalized messages for supporters: thank-yous, updates, re-engagement, share requests, and follow-ups |
@@ -29,38 +45,23 @@ Your AI coach for everything on PayIt2: fundraisers, events, and groups. 5 skill
 - *"My campaign has been live 2 weeks and donations have stalled. What do I do?"*
 - *"Write a week's worth of social posts for my campaign - we just hit 50%."*
 
-### Install
+### Plugin Contents
 
-**Download:** Grab the [latest zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-campaign-coach-plugin.zip) from the releases page.
+- **5 skills:** Campaign creation, analytics, promotion, context, and supporter engagement
+- **4 commands:** `/campaign`, `/promote`, `/check-in`, `/engage`
+- **3 agents:** Campaign coach, content generator, supporter outreach
+- **MCP server** for live PayIt2 API connectivity
+- **Session hooks** for automatic context loading and campaign URL detection
 
-**Claude Code (CLI):**
+## Development
+
+Plugin source files live in the [payit2-campaign-coach](https://github.com/PayIt2/payit2-campaign-coach) repo. This repo contains only the marketplace manifest and build tooling.
+
+To rebuild zips locally (requires the source repo cloned as a sibling):
 
 ```bash
-claude plugin install payit2-campaign-coach@marketplace
+bash scripts/build-zips.sh
 ```
-
-Or load for a single session:
-
-```bash
-claude --plugin-dir ./payit2-campaign-coach
-```
-
-### Plugin Structure
-
-```
-payit2-campaign-coach/
-  .claude-plugin/plugin.json    # Plugin manifest (v1.2.0)
-  .mcp.json                     # MCP server configuration
-  hooks/hooks.json              # Session and event hooks
-  scripts/                      # Hook helper scripts
-  skills/                       # 5 workflow skills
-  commands/                     # 4 slash commands
-  agents/                       # 3 autonomous agents
-```
-
-## Install Full Marketplace
-
-Install all PayIt2 plugins at once by downloading the [full marketplace zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-plugins-marketplace.zip) from the releases page.
 
 ## About PayIt2
 
