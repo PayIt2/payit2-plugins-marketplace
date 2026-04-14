@@ -14,11 +14,11 @@ jobs:
       - name: Checkout marketplace repo
         uses: actions/checkout@v4
 
-      - name: Checkout campaign-coach source repo
+      - name: Checkout campaign-assistant source repo
         uses: actions/checkout@v4
         with:
-          repository: PayIt2/payit2-campaign-coach
-          path: ../payit2-campaign-coach
+          repository: PayIt2/payit2-campaign-assistant
+          path: ../payit2-campaign-assistant
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build plugin and skill zips
@@ -30,7 +30,7 @@ jobs:
         run: |
           gh release upload "$GITHUB_REF_NAME" \
             dist/payit2-plugins-marketplace.zip \
-            dist/payit2-campaign-coach-plugin.zip --clobber
+            dist/payit2-campaign-assistant-plugin.zip --clobber
 
           for zip in dist/skills/*.zip; do
             gh release upload "$GITHUB_REF_NAME" "$zip" --clobber

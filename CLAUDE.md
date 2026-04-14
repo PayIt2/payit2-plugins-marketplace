@@ -20,11 +20,11 @@ docs/                             # OPEN_ITEMS.md, COMPLETED_ITEMS.md
 .github/workflows/release.yml    # Release automation
 ```
 
-No plugin source files live here. The build script pulls from sibling source repos (e.g. `../payit2-campaign-coach/plugin/`).
+No plugin source files live here. The build script pulls from sibling source repos (e.g. `../payit2-campaign-assistant/plugin/`).
 
 ## Building Zips
 
-Requires sibling repo `payit2-campaign-coach` to be cloned. Then run:
+Requires sibling repo `payit2-campaign-assistant` to be cloned. Then run:
 
 ```bash
 bash scripts/build-zips.sh
@@ -32,12 +32,12 @@ bash scripts/build-zips.sh
 
 Produces:
 - `dist/payit2-plugins-marketplace.zip` - full marketplace (for "Upload to a new marketplace")
-- `dist/payit2-campaign-coach-plugin.zip` - full plugin (for "Upload plugin" flow)
+- `dist/payit2-campaign-assistant-plugin.zip` - full plugin (for "Upload plugin" flow)
 - `dist/skills/<name>-skill.zip` - individual skill zips (for "Upload skill" flow)
 
 ## Adding or Updating Plugins
 
-1. Make changes in the source repo (e.g. `payit2-campaign-coach`)
+1. Make changes in the source repo (e.g. `payit2-campaign-assistant`)
 2. Update `marketplace.json` if adding a new plugin
 3. Run `bash scripts/build-zips.sh` to rebuild from source
 

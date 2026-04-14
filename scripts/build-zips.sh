@@ -1,23 +1,23 @@
 #!/bin/bash
 # Build distributable zip files for the PayIt2 plugin marketplace.
 #
-# Source of truth: ../payit2-campaign-coach/plugin/ (the campaign-coach source repo).
+# Source of truth: ../payit2-campaign-assistant/plugin/ (the campaign-assistant source repo).
 # This script pulls from there — no plugin files are stored in this repo.
 #
 # Produces:
-#   dist/payit2-campaign-coach-plugin.zip        — full plugin (for "Upload plugin" flow)
+#   dist/payit2-campaign-assistant-plugin.zip    — full plugin (for "Upload plugin" flow)
 #   dist/payit2-plugins-marketplace.zip          — marketplace (for "Upload to a new marketplace")
 #   dist/skills/<name>-skill.zip                 — individual skill zips (for "Upload skill" flow)
 
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SOURCE_PLUGIN="$(cd "$REPO_ROOT/../payit2-campaign-coach/plugin" 2>/dev/null && pwd)"
+SOURCE_PLUGIN="$(cd "$REPO_ROOT/../payit2-campaign-assistant/plugin" 2>/dev/null && pwd)"
 DIST_DIR="$REPO_ROOT/dist"
 
 if [ ! -d "$SOURCE_PLUGIN" ]; then
-  echo "Error: payit2-campaign-coach repo not found at ../payit2-campaign-coach"
-  echo "Clone it first: git clone https://github.com/PayIt2/payit2-campaign-coach.git"
+  echo "Error: payit2-campaign-assistant repo not found at ../payit2-campaign-assistant"
+  echo "Clone it first: git clone https://github.com/PayIt2/payit2-campaign-assistant.git"
   exit 1
 fi
 
@@ -27,12 +27,12 @@ mkdir -p "$DIST_DIR/skills"
 # --- Full plugin zip ---
 # Zip contents of source plugin directory (no wrapper folder).
 cd "$SOURCE_PLUGIN"
-zip -r "$DIST_DIR/payit2-campaign-coach-plugin.zip" \
+zip -r "$DIST_DIR/payit2-campaign-assistant-plugin.zip" \
   . \
   -x "*.DS_Store" \
   > /dev/null
 cd "$REPO_ROOT"
-echo "Built: dist/payit2-campaign-coach-plugin.zip"
+echo "Built: dist/payit2-campaign-assistant-plugin.zip"
 
 # --- Marketplace zip ---
 # Same as plugin zip but with marketplace.json added alongside plugin.json.

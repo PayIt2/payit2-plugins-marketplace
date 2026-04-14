@@ -2,9 +2,9 @@
 
 AI-powered Claude plugins for the [PayIt2](https://payit2.com) platform.
 
-## PayIt2 Campaign Coach v1.2
+## PayIt2 Campaign Assistant v1.2
 
-Your AI coach for everything on PayIt2: fundraisers, events, and groups. 5 skills, 4 commands, 3 agents with MCP integration and session hooks.
+Your AI assistant for everything on PayIt2: fundraisers, events, and groups. 5 skills, 4 commands, 3 agents with MCP integration and session hooks.
 
 ### Install
 
@@ -14,7 +14,7 @@ Download [payit2-plugins-marketplace.zip](https://github.com/PayIt2/payit2-plugi
 
 **Single plugin:**
 
-Download [payit2-campaign-coach-plugin.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-campaign-coach-plugin.zip) and upload via Settings > Plugins > Upload plugin.
+Download [payit2-campaign-assistant-plugin.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-campaign-assistant-plugin.zip) and upload via Settings > Plugins > Upload plugin.
 
 **Individual skills:**
 
@@ -49,13 +49,13 @@ Upload any skill zip via Settings > Plugins > Upload skill.
 
 - **5 skills:** Campaign creation, analytics, promotion, context, and supporter engagement
 - **4 commands:** `/campaign`, `/promote`, `/check-in`, `/engage`
-- **3 agents:** Campaign coach, content generator, supporter outreach
+- **3 agents:** Campaign assistant, content generator, supporter outreach
 - **MCP server** for live PayIt2 API connectivity
 - **Session hooks** for automatic context loading and campaign URL detection
 
 ## Development
 
-Plugin source files live in the [payit2-campaign-coach](https://github.com/PayIt2/payit2-campaign-coach) repo. This repo contains only the marketplace manifest and build tooling.
+Plugin source files live in the [payit2-campaign-assistant](https://github.com/PayIt2/payit2-campaign-assistant) repo. This repo contains only the marketplace manifest and build tooling.
 
 To rebuild zips locally (requires the source repo cloned as a sibling):
 
