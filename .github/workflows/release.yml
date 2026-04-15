@@ -27,12 +27,11 @@ jobs:
         with:
           path: payit2-plugins-marketplace
 
-      - name: Checkout campaign-assistant source repo (private)
+      - name: Checkout campaign-assistant source repo
         uses: actions/checkout@v4
         with:
           repository: PayIt2/payit2-campaign-assistant
           path: payit2-campaign-assistant
-          token: ${{ secrets.CROSS_REPO_TOKEN }}
 
       - name: Build plugin and skill zips
         working-directory: payit2-plugins-marketplace
