@@ -23,12 +23,12 @@ jobs:
       # scripts/build-zips.sh can find the source at ../payit2-campaign-assistant/plugin
       # relative to the marketplace repo root.
       - name: Checkout marketplace repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: payit2-plugins-marketplace
 
       - name: Checkout campaign-assistant source repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: PayIt2/payit2-campaign-assistant
           path: payit2-campaign-assistant
