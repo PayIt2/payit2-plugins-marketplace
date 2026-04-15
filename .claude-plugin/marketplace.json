@@ -11,7 +11,7 @@
         "url": "PayIt2/payit2-campaign-assistant",
         "path": "plugin",
         "ref": "main",
-        "sha": "9381050"
+        "sha": "50030d3"
       },
       "description": "AI-powered campaign assistant for PayIt2.com. Create, promote, and optimize any campaign type: fundraisers, events, and groups. Get assistance, generate content, and engage supporters through conversation with Claude."
     }
