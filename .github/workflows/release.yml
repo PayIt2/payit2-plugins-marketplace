@@ -3,6 +3,14 @@ name: Release
 on:
   release:
     types: [published]
+  # Manual re-run so we can rebuild/re-upload zips for an existing release
+  # without having to cut a new tag. Supply the release tag (e.g. v1.5.0).
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to attach zips to (e.g. v1.5.0)"
+        required: true
+        type: string
 
 jobs:
   build-and-attach:
@@ -11,27 +19,44 @@ jobs:
       contents: write
 
     steps:
+      # Check both repos out as siblings inside $GITHUB_WORKSPACE so that
+      # scripts/build-zips.sh can find the source at ../payit2-campaign-assistant/plugin
+      # relative to the marketplace repo root.
       - name: Checkout marketplace repo
         uses: actions/checkout@v4
+        with:
+          path: payit2-plugins-marketplace
 
-      - name: Checkout campaign-assistant source repo
+      - name: Checkout campaign-assistant source repo (private)
         uses: actions/checkout@v4
         with:
           repository: PayIt2/payit2-campaign-assistant
-          path: ../payit2-campaign-assistant
-          token: ${{ secrets.GITHUB_TOKEN }}
+          path: payit2-campaign-assistant
+          token: ${{ secrets.CROSS_REPO_TOKEN }}
 
       - name: Build plugin and skill zips
+        working-directory: payit2-plugins-marketplace
         run: bash scripts/build-zips.sh
 
+      - name: Resolve release tag
+        id: tag
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "name=${{ inputs.tag }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "name=$GITHUB_REF_NAME" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Upload zips to release
+        working-directory: payit2-plugins-marketplace
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release upload "$GITHUB_REF_NAME" \
+          TAG="${{ steps.tag.outputs.name }}"
+          gh release upload "$TAG" \
             dist/payit2-plugins-marketplace.zip \
             dist/payit2-campaign-assistant-plugin.zip --clobber
 
           for zip in dist/skills/*.zip; do
-            gh release upload "$GITHUB_REF_NAME" "$zip" --clobber
+            gh release upload "$TAG" "$zip" --clobber
           done
