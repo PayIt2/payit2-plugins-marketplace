@@ -2,13 +2,13 @@
 
 AI-powered Claude plugins for the [PayIt2](https://payit2.com) platform.
 
-## PayIt2 Campaign Assistant v1.4
+## PayIt2 Campaign Assistant v1.5
 
-Your AI assistant for everything on PayIt2: fundraisers, events, and groups. 9 skills, 3 agents with MCP integration and session hooks.
+Your AI assistant for everything on PayIt2: fundraisers, events, and groups. Five skills and one strategy agent, with optional MCP integration for live campaign data.
 
 ### Install
 
-**Full marketplace** (includes all PayIt2 plugins):
+**Full marketplace** (recommended — includes all PayIt2 plugins):
 
 Download [payit2-plugins-marketplace.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-plugins-marketplace.zip) and upload via Settings > Plugins > Upload to a new marketplace.
 
@@ -20,15 +20,11 @@ Download [payit2-campaign-assistant-plugin.zip](https://github.com/PayIt2/payit2
 
 | Skill | Download |
 |-------|----------|
-| Campaign Creation | [campaign-creation-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-creation-skill.zip) |
-| Campaign Analytics | [campaign-analytics-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-analytics-skill.zip) |
-| Campaign Promotion | [campaign-promotion-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-promotion-skill.zip) |
-| Campaign Context | [campaign-context-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-context-skill.zip) |
-| Supporter Engagement | [supporter-engagement-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/supporter-engagement-skill.zip) |
-| Campaign (create & launch) | [campaign-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-skill.zip) |
-| Check-in (health check) | [check-in-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/check-in-skill.zip) |
-| Promote (promotion strategy) | [promote-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/promote-skill.zip) |
-| Engage (supporter comms) | [engage-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/engage-skill.zip) |
+| `/campaign` - create and launch | [campaign-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-skill.zip) |
+| `/check-in` - health check and analytics | [check-in-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/check-in-skill.zip) |
+| `/promote` - promotion strategy and content | [promote-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/promote-skill.zip) |
+| `/engage` - supporter communications | [engage-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/engage-skill.zip) |
+| campaign-context - shared context engine | [campaign-context-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-context-skill.zip) |
 
 Upload any skill zip via Settings > Plugins > Upload skill.
 
@@ -41,6 +37,8 @@ Upload any skill zip via Settings > Plugins > Upload skill.
 | `/check-in` | Health check on any active campaign with a score, diagnosis, and specific action items |
 | `/engage` | Personalized messages for supporters: thank-yous, updates, re-engagement, share requests, and follow-ups |
 
+`campaign-context` is a shared context-gathering engine used by all four user-facing skills; it is not invoked directly.
+
 ### Example Prompts
 
 - *"My neighbor's house burned down. Help me raise $15,000 for her family."*
@@ -51,10 +49,9 @@ Upload any skill zip via Settings > Plugins > Upload skill.
 
 ### Plugin Contents
 
-- **9 skills:** Campaign, check-in, promote, engage, campaign creation, analytics, promotion, context, and supporter engagement
-- **3 agents:** Campaign assistant, content generator, supporter outreach
-- **MCP server** for live PayIt2 API connectivity
-- **Session hooks** for automatic context loading and campaign URL detection
+- **5 skills:** campaign, check-in, promote, engage, and campaign-context
+- **1 agent:** campaign-assistant (Opus) for deep strategy and health analysis
+- **Optional MCP integration** for live PayIt2 API connectivity (prompts expose campaign data, tools save generated content back)
 
 ## Development
 
