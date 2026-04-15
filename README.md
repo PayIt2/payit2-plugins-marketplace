@@ -2,9 +2,9 @@
 
 AI-powered Claude plugins for the [PayIt2](https://payit2.com) platform.
 
-## PayIt2 Campaign Assistant v1.3
+## PayIt2 Campaign Assistant v1.4
 
-Your AI assistant for everything on PayIt2: fundraisers, events, and groups. 5 skills, 4 commands, 3 agents with MCP integration and session hooks.
+Your AI assistant for everything on PayIt2: fundraisers, events, and groups. 9 skills, 3 agents with MCP integration and session hooks.
 
 ### Install
 
@@ -25,13 +25,17 @@ Download [payit2-campaign-assistant-plugin.zip](https://github.com/PayIt2/payit2
 | Campaign Promotion | [campaign-promotion-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-promotion-skill.zip) |
 | Campaign Context | [campaign-context-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-context-skill.zip) |
 | Supporter Engagement | [supporter-engagement-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/supporter-engagement-skill.zip) |
+| Campaign (create & launch) | [campaign-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-skill.zip) |
+| Check-in (health check) | [check-in-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/check-in-skill.zip) |
+| Promote (promotion strategy) | [promote-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/promote-skill.zip) |
+| Engage (supporter comms) | [engage-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/engage-skill.zip) |
 
 Upload any skill zip via Settings > Plugins > Upload skill.
 
-### Commands
+### Skills
 
-| Command | What it does |
-|---------|-------------|
+| Skill | What it does |
+|-------|-------------|
 | `/campaign` | Build any campaign from scratch with story, title, goal, ticketing, cost-splitting, and launch strategy |
 | `/promote` | Generate a complete promotion package: social posts, email sequences, content calendar, and SEO recommendations |
 | `/check-in` | Health check on any active campaign with a score, diagnosis, and specific action items |
@@ -47,8 +51,7 @@ Upload any skill zip via Settings > Plugins > Upload skill.
 
 ### Plugin Contents
 
-- **5 skills:** Campaign creation, analytics, promotion, context, and supporter engagement
-- **4 commands:** `/campaign`, `/promote`, `/check-in`, `/engage`
+- **9 skills:** Campaign, check-in, promote, engage, campaign creation, analytics, promotion, context, and supporter engagement
 - **3 agents:** Campaign assistant, content generator, supporter outreach
 - **MCP server** for live PayIt2 API connectivity
 - **Session hooks** for automatic context loading and campaign URL detection
