@@ -3,6 +3,14 @@ name: Update Website Version Badge
 on:
   release:
     types: [published]
+  # Manual trigger for testing or re-running against an existing release
+  # without cutting a new tag.
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to use for the badge update (e.g. v1.5.0)"
+        required: true
+        type: string
 
 jobs:
   update-website:
@@ -21,8 +29,13 @@ jobs:
       - name: Extract version from release tag
         id: version
         run: |
+          # Prefer the dispatch input, fall back to GITHUB_REF_NAME for release events.
+          RAW="${{ inputs.tag }}"
+          if [ -z "$RAW" ]; then
+            RAW="$GITHUB_REF_NAME"
+          fi
           # Strip leading 'v' from tag (v1.4.0 -> 1.4.0)
-          TAG="${GITHUB_REF_NAME#v}"
+          TAG="${RAW#v}"
           # Short version for badge display (1.4.0 -> 1.4)
           SHORT=$(echo "$TAG" | sed 's/\.[0-9]*$//')
           echo "full=$TAG" >> "$GITHUB_OUTPUT"
