@@ -66,14 +66,9 @@ jobs:
           git add plugins.html
           git commit -m "Update plugin version badge to v${{ steps.version.outputs.short }}"
           git push origin "$BRANCH"
+          TAG="${{ github.ref_name }}"
+          BODY=$(printf 'Automated update from marketplace release %s.\n\nUpdates the plugin version badge on the plugins page.\n\nSource: PayIt2/payit2-plugins-marketplace@%s\n' "$TAG" "$TAG")
           gh pr create \
             --repo PayIt2/payit2-website \
             --title "Update plugin badge to v${{ steps.version.outputs.short }}" \
-            --body "$(cat <<'EOF'
-Automated update from marketplace release ${{ github.ref_name }}.
-
-Updates the plugin version badge on the plugins page.
-
-Source: PayIt2/payit2-plugins-marketplace@${{ github.ref_name }}
-EOF
-          )"
+            --body "$BODY"
