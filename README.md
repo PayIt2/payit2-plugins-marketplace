@@ -23,7 +23,7 @@ Download [payit2-campaign-assistant-plugin.zip](https://github.com/PayIt2/payit2
 | `/campaign` - create and launch | [campaign-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-skill.zip) |
 | `/check-in` - health check and analytics | [check-in-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/check-in-skill.zip) |
 | `/promote` - promotion strategy and content | [promote-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/promote-skill.zip) |
-| `/engage` - supporter communications | [engage-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/engage-skill.zip) |
+| `/engage` - participant communications | [engage-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/engage-skill.zip) |
 | campaign-context - shared context engine | [campaign-context-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-context-skill.zip) |
 
 Upload any skill zip via Settings > Plugins > Upload skill.
@@ -35,7 +35,7 @@ Upload any skill zip via Settings > Plugins > Upload skill.
 | `/campaign` | Build any campaign from scratch with story, title, goal, ticketing, cost-splitting, and launch strategy |
 | `/promote` | Generate a complete promotion package: social posts, email sequences, content calendar, and SEO recommendations |
 | `/check-in` | Health check on any active campaign with a score, diagnosis, and specific action items |
-| `/engage` | Personalized messages for supporters: thank-yous, updates, re-engagement, share requests, and follow-ups |
+| `/engage` | Personalized messages for participants: thank-yous, updates, re-engagement, share requests, and follow-ups |
 
 `campaign-context` is a shared context-gathering engine used by all four user-facing skills; it is not invoked directly.
 
