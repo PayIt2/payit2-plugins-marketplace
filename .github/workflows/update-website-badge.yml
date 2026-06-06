@@ -16,15 +16,26 @@ jobs:
   update-website:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
+      contents: read
+      id-token: write
 
     steps:
+      # Per PLATFORM-STANDARDS § 4 — cross-repo writes use the PayIt2 Automation
+      # GitHub App (short-lived install token), not a long-lived PAT.
+      - name: Mint cross-repo install token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.PAYIT2_AUTOMATION_APP_ID }}
+          private-key: ${{ secrets.PAYIT2_AUTOMATION_PRIVATE_KEY }}
+          owner: PayIt2
+          repositories: payit2-website
+
       - name: Checkout website repo
         uses: actions/checkout@v5
         with:
           repository: PayIt2/payit2-website
-          token: ${{ secrets.CROSS_REPO_TOKEN }}
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Extract version from release tag
         id: version
@@ -57,7 +68,7 @@ jobs:
       - name: Create PR
         if: steps.diff.outputs.changed == 'true'
         env:
-          GH_TOKEN: ${{ secrets.CROSS_REPO_TOKEN }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           BRANCH="auto/plugin-v${{ steps.version.outputs.full }}"
           git checkout -b "$BRANCH"
