@@ -44,11 +44,7 @@ Thomas (2026-06-05): "I have no idea — mark as item for Brian to confirm."
 
 ### Engineering Health — marketplace is live; hygiene stays continuous
 
-**Operational Hygiene** — manifest pins, version drift
-M-1 Refresh `marketplace.json` to point at the latest published campaign-assistant tag (currently pins old sha; users get stale plugin until updated)
-
-**Developer Experience** — internal docs, publishing process
-B-2 Document publishing process (resolves Q1 pending answer; either PayIt2-team publish docs or third-party submission process depending on Brian's answer)
+_(M-1 manifest refresh closed 2026-06-09; PayIt2-team publishing docs shipped at [`docs/PUBLISHING.md`](PUBLISHING.md); see COMPLETED_ITEMS.md)_
 
 ### Launch Gates
 
@@ -57,36 +53,47 @@ _(none — marketplace is already published and serving installs)_
 ### Growth — distribution + plugin expansion; post-launch, compounds
 
 **Product Features** — additional plugin scopes
-B-1 Additional plugins (Newsletter agent, blog agent, compliance screener, lookalike marketer — gated on Q2; overlaps with the 11 plugin/agent scopes in payit2-business OPEN_ITEMS)
+B-2 Third-party plugin submission product flow (deferred — needs product spec; covers when/whether/how PayIt2 accepts external developers' plugins into the marketplace)
+
+_(B-1 "Additional plugins" pending reframe — see Q2 / explanation in 2026-06-09 notes below)_
 
 ---
 
 ## Must-do before V2 dev-complete
 
-### M-1. Refresh `marketplace.json` to point at the latest published campaign-assistant tag
-**Source:** Original item from 2026-04-03 audit ("Version mismatch between repos"), updated 2026-06-05.
-**Verified 2026-06-05:**
-- `marketplace.json` pins `sha: c12961784334848f3c7b754cc44e3400e2cca613` (commit `c129617`, an intermediate "fix(release): align release.sh with marketplace's actual workflow" commit)
-- Campaign-assistant has shipped v1.6.0 since — sha `1c86b260738cabcc4be6fe09019fa65273041a67`
-- Plus a newer documentation commit on main, `02a0620`
-
-So users who add the marketplace today get an older version of the plugin than the latest tagged release. The release workflow (`release.yml`) does build from current `main` of the source repo when triggered, but the manifest in `master`'s `marketplace.json` is the canonical reference Claude reads — so it overrides any newer build until manifest is updated and committed.
-**Classification rationale:** Anyone who installs PayIt2 Campaign Assistant from the marketplace before V2 dev-complete gets a stale version. Worth fixing before board members test. **Must-do.**
-**Scope of fix:** Update sha in `.claude-plugin/marketplace.json` to v1.6.0 sha; consider whether to pin a tag (`v1.6.0`) instead of a sha for future updates to be cleaner.
+_(M-1 closed 2026-06-09 — see COMPLETED_ITEMS.md)_
 
 ---
 
 ## Backlog (any time after V2 dev-complete)
 
-### B-1. Additional plugins — gated on Q2 above
-**Source:** Original "Planned Work" item from OPEN_ITEMS.
-**Verified 2026-06-05:** ✅ Real. Specs exist in `payit2-business/agents/`. These overlap with the 11 plugin scopes in payit2-business OPEN_ITEMS that Thomas hasn't reviewed yet.
-**Classification rationale:** Won't classify until Q2 resolved during business repo audit.
+### B-1. Additional plugins — reframe needed (CEO 2026-06-09)
 
-### B-2. Document publishing process (resolves Q1 above pending answer)
-**Source:** Original "Marketplace submission process" item from OPEN_ITEMS.
-**Verified 2026-06-05:** Doc doesn't exist. Open work.
-**Classification rationale:** Backlog regardless of Q1 answer — neither (a) third-party submission nor (b) PayIt2-team-shipping docs is a dev-complete blocker.
+**CEO question 2026-06-09:** "I do not understand how this would help PayIt2's users."
+
+**Honest answer:** It probably wouldn't, as currently framed. The 4 candidate plugin scopes here (Newsletter agent, Blog agent, Compliance screener, Lookalike marketer) are **internal marketing-automation surfaces**, not user-facing capabilities. They help PayIt2's marketing team produce content and run audience targeting — they don't appear in any organizer's, donor's, payer's, or admin's workflow on the platform.
+
+The 2026-06-05 audit already correctly housed these as Pattern B GHA automations in `payit2-business/OPEN_ITEMS.md` (B-5 Newsletter Writer rebuild on SES, B-9 Blog Social Syndicator, B-7 Executive Update Agent, etc.). Hosting them ALSO in this marketplace as user-installable plugins would be wrong — they're not designed to be installed by anyone outside PayIt2.
+
+**Recommendation:** Cancel B-1 in this repo. The 4 scopes are tracked correctly in `payit2-business/OPEN_ITEMS.md`. Plugin marketplace expansion (in this repo) should only host plugins built for organizers, donors, payers, or admins — Campaign Assistant is the one current example.
+
+**Pending CEO confirmation before cancelling**, in case there's a use case for these as user-installable plugins that I'm not seeing.
+
+### B-2. Third-party plugin submission product flow (deferred for product spec)
+
+**Source:** Original "Marketplace submission process" item from the 2026-04-03 audit. Reframed 2026-06-09: option (b) PayIt2-team publishing docs shipped at [`docs/PUBLISHING.md`](PUBLISHING.md); this item now scoped to option (a) only.
+
+**What this is:** Define the product flow for accepting plugin submissions from external developers (third parties — partners, integrators, customers who build on top of PayIt2) into the PayIt2 marketplace catalog.
+
+**Why deferred:** No real-near-term demand. No external developer has asked to submit a plugin. The 2026-06-05 audit noted three possible interpretations of the original "marketplace submission process" item; option (b) (internal team publishing) was the actual gap and has now been documented. Option (c) (cancel as aspirational) and option (a) (external submission) are distinguishable only by whether external interest materializes.
+
+**What's open:** A product spec covering: (1) eligibility criteria (what kinds of plugins PayIt2 will host vs reject), (2) submission form and review SLA, (3) ongoing-listing requirements (e.g. maintenance commitments), (4) security review process for third-party code, (5) trademark/branding rules for third-party plugins using PayIt2's name, (6) revenue-share decisions if a third-party plugin monetizes via PayIt2.
+
+**Effect when shipped:** PayIt2's marketplace becomes a platform that other developers can build for, not just a private catalog of PayIt2's own plugins. Strategically interesting if the ecosystem grows; pure overhead if it doesn't.
+
+**Effort:** ~4-8 hours of product writing + Thomas signoff + Brian alignment. Most of the cost is in defining policies that haven't been needed yet.
+
+**Reopen trigger:** First external developer who asks to submit a plugin. Until then, "deferred" is the right state.
 
 ---
 
