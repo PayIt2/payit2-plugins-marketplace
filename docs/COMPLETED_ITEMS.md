@@ -4,6 +4,18 @@ Items completed from OPEN_ITEMS.md, with date and outcome.
 
 ---
 
+## 2026-06-09 (manifest refresh + team publishing docs)
+
+- **M-1. Refresh `marketplace.json` to point at the latest published campaign-assistant tag** — Updated the `sha` field of the `payit2-campaign-assistant` plugin entry from `c12961784334848f3c7b754cc44e3400e2cca613` (an intermediate "fix(release): align release.sh" commit) to `1c86b260738cabcc4be6fe09019fa65273041a67` (the v1.6.0 release tag's commit). Users who install via `/plugin marketplace add PayIt2/payit2-plugins-marketplace` + `/plugin install payit2-campaign-assistant` now get the v1.6.0 release.
+
+  Considered pinning to a tag (`ref: "v1.6.0"`) instead of a sha for cleaner future updates. Kept `ref: "main"` + `sha: <commit>` per existing schema; the sha is the canonical pin and `ref` is informational. Tag-based pinning would be a schema change requiring marketplace-tooling verification.
+
+- **B-2 option (b). PayIt2-team publishing process docs** — Shipped at [`docs/PUBLISHING.md`](docs/PUBLISHING.md). Covers (1) when to use the process, (2) tag-bumping rules (patch/minor/major), (3) source-repo workflow (PR → merge → tag → release), (4) updating the marketplace manifest sha, (5) PR review + verification flow, (6) rollback procedure, (7) tag-vs-sha schema rationale. Resolves Q1's option (b) interpretation of the original "marketplace submission process" item.
+
+  Note: option (a) (third-party plugin submission flow for external developers) is a separate, deferred product spec — see OPEN_ITEMS.md B-2 for the reframed item with reopen trigger.
+
+---
+
 ## 2026-06-05 (audit pass resolutions)
 
 Items from the 2026-04-03 "Audit Issues" section that were verified resolved during the 2026-06-05 OPEN_ITEMS reorganization audit. Verified by direct repo inspection (not paper exercise).
