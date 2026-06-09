@@ -55,7 +55,7 @@ _(none — marketplace is already published and serving installs)_
 **Product Features** — additional plugin scopes
 B-2 Third-party plugin submission product flow (deferred — needs product spec; covers when/whether/how PayIt2 accepts external developers' plugins into the marketplace)
 
-_(B-1 "Additional plugins" pending reframe — see Q2 / explanation in 2026-06-09 notes below)_
+_(B-1 cancelled 2026-06-09 — see audit log; 4 candidate scopes tracked correctly in `payit2-business/OPEN_ITEMS.md` B-5, B-9, B-43, B-44)_
 
 ---
 
@@ -67,17 +67,7 @@ _(M-1 closed 2026-06-09 — see COMPLETED_ITEMS.md)_
 
 ## Backlog (any time after V2 dev-complete)
 
-### B-1. Additional plugins — reframe needed (CEO 2026-06-09)
-
-**CEO question 2026-06-09:** "I do not understand how this would help PayIt2's users."
-
-**Honest answer:** It probably wouldn't, as currently framed. The 4 candidate plugin scopes here (Newsletter agent, Blog agent, Compliance screener, Lookalike marketer) are **internal marketing-automation surfaces**, not user-facing capabilities. They help PayIt2's marketing team produce content and run audience targeting — they don't appear in any organizer's, donor's, payer's, or admin's workflow on the platform.
-
-The 2026-06-05 audit already correctly housed these as Pattern B GHA automations in `payit2-business/OPEN_ITEMS.md` (B-5 Newsletter Writer rebuild on SES, B-9 Blog Social Syndicator, B-7 Executive Update Agent, etc.). Hosting them ALSO in this marketplace as user-installable plugins would be wrong — they're not designed to be installed by anyone outside PayIt2.
-
-**Recommendation:** Cancel B-1 in this repo. The 4 scopes are tracked correctly in `payit2-business/OPEN_ITEMS.md`. Plugin marketplace expansion (in this repo) should only host plugins built for organizers, donors, payers, or admins — Campaign Assistant is the one current example.
-
-**Pending CEO confirmation before cancelling**, in case there's a use case for these as user-installable plugins that I'm not seeing.
+_(B-1 cancelled 2026-06-09 — see audit log below for cancellation rationale and cross-refs to canonical tracking in `payit2-business/OPEN_ITEMS.md`)_
 
 ### B-2. Third-party plugin submission product flow (deferred for product spec)
 
@@ -94,6 +84,24 @@ The 2026-06-05 audit already correctly housed these as Pattern B GHA automations
 **Effort:** ~4-8 hours of product writing + Thomas signoff + Brian alignment. Most of the cost is in defining policies that haven't been needed yet.
 
 **Reopen trigger:** First external developer who asks to submit a plugin. Until then, "deferred" is the right state.
+
+---
+
+## Audit log (2026-06-09)
+
+- **B-1 "Additional plugins" CANCELLED** — CEO question 2026-06-09: "I do not understand how this would help PayIt2's users." Honest answer: it wouldn't, as framed. The 4 candidate plugin scopes (Newsletter agent, Blog agent, Compliance screener, Lookalike marketer) are **internal marketing-automation surfaces**, not user-facing capabilities. They help PayIt2's marketing team produce content and run audience targeting; they don't appear in any organizer's, donor's, payer's, or admin's workflow on the platform.
+
+  This marketplace should only host plugins built for **organizers, donors, payers, or admins**. Campaign Assistant (the one current entry) qualifies. The 4 scopes mentioned here do not.
+
+  **Canonical tracking moved to `payit2-business/OPEN_ITEMS.md`:**
+  - Newsletter agent → [B-5 Newsletter Writer rebuild on SES](../../payit2-business/OPEN_ITEMS.md#b-5-newsletter-writer--rebuild-on-ses)
+  - Blog agent → Blog Writer is DONE (`weekly-blog-draft.yml`); Blog Social Syndicator → [B-9](../../payit2-business/OPEN_ITEMS.md#b-9-blog-social-syndicator-path-triggered-on-new-blog-post)
+  - Compliance screener → **[B-43 Compliance Agent](../../payit2-business/OPEN_ITEMS.md#b-43-compliance-agent--automated-campaign--messaging-compliance-review-internal)** (added 2026-06-09 to close audit gap)
+  - Lookalike marketer → **[B-44 Lookalike Marketer](../../payit2-business/OPEN_ITEMS.md#b-44-lookalike-marketer--internal-organizer-acquisition-automation)** (added 2026-06-09 to close audit gap)
+
+  The 2026-06-05 audit had missed B-43 and B-44; payit2-business#190 (merged 2026-06-09) added them with full context (scaffold locations, scope, why-backlog rationale, effort estimates, dependency notes). Both flagged as internal-only.
+
+  Plugin/Agent Scope Index in business OPEN_ITEMS now lists 15 scopes (was 13).
 
 ---
 
