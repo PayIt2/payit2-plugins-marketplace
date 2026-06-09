@@ -36,6 +36,31 @@ Thomas (2026-06-05): "I have no idea — mark as item for Brian to confirm."
 
 ---
 
+## How items are organized — by "why we need to do this"
+
+> Added 2026-06-08 per CEO direction. Items grouped by motivation. Original M-/B-numbered IDs preserve so cross-references still resolve; the sections below this index keep their chronological order.
+>
+> **Priority order**: Engineering Health first — marketplace is live and serving installs. Launch Gates empty (marketplace is already published). Growth — process docs + plugin expansion.
+
+### Engineering Health — marketplace is live; hygiene stays continuous
+
+**Operational Hygiene** — manifest pins, version drift
+M-1 Refresh `marketplace.json` to point at the latest published campaign-assistant tag (currently pins old sha; users get stale plugin until updated)
+
+**Developer Experience** — internal docs, publishing process
+B-2 Document publishing process (resolves Q1 pending answer; either PayIt2-team publish docs or third-party submission process depending on Brian's answer)
+
+### Launch Gates
+
+_(none — marketplace is already published and serving installs)_
+
+### Growth — distribution + plugin expansion; post-launch, compounds
+
+**Product Features** — additional plugin scopes
+B-1 Additional plugins (Newsletter agent, blog agent, compliance screener, lookalike marketer — gated on Q2; overlaps with the 11 plugin/agent scopes in payit2-business OPEN_ITEMS)
+
+---
+
 ## Must-do before V2 dev-complete
 
 ### M-1. Refresh `marketplace.json` to point at the latest published campaign-assistant tag
