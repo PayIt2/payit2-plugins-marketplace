@@ -24,7 +24,7 @@ jobs:
       # GitHub App (short-lived install token), not a long-lived PAT.
       - name: Mint cross-repo install token
         id: app-token
-        uses: actions/create-github-app-token@v2
+        uses: actions/create-github-app-token@v3
         with:
           app-id: ${{ secrets.PAYIT2_AUTOMATION_APP_ID }}
           private-key: ${{ secrets.PAYIT2_AUTOMATION_PRIVATE_KEY }}
@@ -32,7 +32,7 @@ jobs:
           repositories: payit2-website
 
       - name: Checkout website repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: PayIt2/payit2-website
           token: ${{ steps.app-token.outputs.token }}
