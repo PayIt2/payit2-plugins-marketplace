@@ -2,7 +2,7 @@
 
 AI-powered Claude plugins for the [PayIt2](https://payit2.com) platform.
 
-## PayIt2 Campaign Assistant v1.6
+## PayIt2 Campaign Assistant v1.6.0
 
 Your AI assistant for everything on PayIt2: fundraisers, events, and groups. Five skills and one strategy agent, with optional MCP integration for live campaign data.
 
