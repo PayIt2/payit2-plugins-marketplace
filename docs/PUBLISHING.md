@@ -1,3 +1,9 @@
+---
+title: "Publishing Process — PayIt2-team workflow for shipping plugin updates"
+type: reference
+doc_status: active
+owner: claude-maintained
+---
 # Publishing Process — PayIt2-team workflow for shipping plugin updates
 
 This is the internal team workflow for releasing a new version of a plugin already in the PayIt2 marketplace. For the user-facing install instructions, see [README.md](../README.md).
