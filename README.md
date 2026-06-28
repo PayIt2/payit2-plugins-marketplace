@@ -1,3 +1,9 @@
+---
+title: "PayIt2 Plugin Marketplace"
+type: reference
+doc_status: active
+owner: claude-maintained
+---
 # PayIt2 Plugin Marketplace
 
 AI-powered Claude plugins for the [PayIt2](https://payit2.com) platform.
