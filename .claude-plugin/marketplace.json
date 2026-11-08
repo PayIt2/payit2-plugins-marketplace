@@ -5,13 +5,13 @@
   },
   "plugins": [
     {
-      "name": "payit2-campaign-assistant",
+      "name": "payit2",
       "source": {
         "source": "git-subdir",
         "url": "PayIt2/payit2-campaign-assistant",
         "path": "plugin",
         "ref": "main",
-        "sha": "b87c9447787da8d2bff53a676b97e9b010fef6ed"
+        "sha": "536bd8aa83d1ca50bb7de89af75388320dba8dca"
       },
       "description": "AI-powered campaign assistant for PayIt2.com. Create, promote, and optimize any campaign type: fundraisers, events, and groups. Get guidance, generate content, and engage participants through conversation with Claude."
     }
