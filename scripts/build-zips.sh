@@ -1,7 +1,7 @@
 #!/bin/bash
 # Build distributable zip files for the PayIt2 plugin marketplace.
 #
-# Source of truth: ../payit2-campaign-assistant/plugin/ (the campaign-assistant source repo).
+# Source of truth: ../payit2-ai-plugin/plugin/ (the PayIt2 plugin source repo).
 # This script pulls from there — no plugin files are stored in this repo.
 #
 # Produces:
@@ -12,12 +12,12 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SOURCE_PLUGIN="$(cd "$REPO_ROOT/../payit2-campaign-assistant/plugin" 2>/dev/null && pwd)"
+SOURCE_PLUGIN="$(cd "$REPO_ROOT/../payit2-ai-plugin/plugin" 2>/dev/null && pwd)"
 DIST_DIR="$REPO_ROOT/dist"
 
 if [ ! -d "$SOURCE_PLUGIN" ]; then
-  echo "Error: payit2-campaign-assistant repo not found at ../payit2-campaign-assistant"
-  echo "Clone it first: git clone https://github.com/PayIt2/payit2-campaign-assistant.git"
+  echo "Error: payit2-ai-plugin repo not found at ../payit2-ai-plugin"
+  echo "Clone it first: git clone https://github.com/PayIt2/payit2-ai-plugin.git"
   exit 1
 fi
 

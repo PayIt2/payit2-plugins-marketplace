@@ -8,7 +8,7 @@
       "name": "payit2",
       "source": {
         "source": "git-subdir",
-        "url": "PayIt2/payit2-campaign-assistant",
+        "url": "PayIt2/payit2-ai-plugin",
         "path": "plugin",
         "ref": "main",
         "sha": "536bd8aa83d1ca50bb7de89af75388320dba8dca"

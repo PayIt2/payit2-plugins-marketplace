@@ -61,7 +61,7 @@ Upload any skill zip via Settings > Plugins > Upload skill.
 
 ## Development
 
-Plugin source files live in the [payit2-campaign-assistant](https://github.com/PayIt2/payit2-campaign-assistant) repo. This repo contains only the marketplace manifest and build tooling.
+Plugin source files live in the [payit2-ai-plugin](https://github.com/PayIt2/payit2-ai-plugin) repo. This repo contains only the marketplace manifest and build tooling.
 
 To rebuild zips locally (requires the source repo cloned as a sibling):
 
