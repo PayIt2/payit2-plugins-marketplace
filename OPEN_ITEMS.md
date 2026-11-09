@@ -20,7 +20,7 @@ owner: claude-maintained
 
 - **What this repo is:** PayIt2's own private "app store" for Claude plugins. The critical file is `.claude-plugin/marketplace.json` — a catalog that Claude reads when a user runs `/plugin marketplace add PayIt2/payit2-plugins-marketplace`. The catalog lists available plugins and points at their source repos. A user who has added the marketplace can then `/plugin install <plugin-name>` directly.
 - **Why have it (vs. just using Claude's central public Discover tab):** Control over publishing (no Anthropic approval gating), supports beta / preview plugins, single subscribe gives users access to everything PayIt2 ever publishes, lets us host plugins that wouldn't fit Anthropic's central catalog.
-- **What's currently published:** One plugin — `payit2-campaign-assistant` (sourced from `PayIt2/payit2-campaign-assistant` on GitHub).
+- **What's currently published:** One plugin — `payit2` (sourced from `PayIt2/payit2-ai-plugin` on GitHub).
 
 ---
 

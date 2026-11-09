@@ -6,14 +6,14 @@ owner: claude-maintained
 ---
 # Publishing Process — PayIt2-team workflow for shipping plugin updates
 
-This is the internal team workflow for releasing a new version of a plugin already in the PayIt2 marketplace. For the user-facing install instructions, see [README.md](../README.md).
+This is the internal team workflow for releasing a new version of a plugin already in the PayIt2 marketplace. For the user-facing install instructions, see [README.md](../README.md). The README names no version number on purpose: it links to the latest release, so a release never leaves it stale (it said v1.6.0 through 1.8.0 and 2.0.0).
 
 Third-party plugin submission (an external developer asking PayIt2 to include their plugin) is not implemented as a self-serve process. See [OPEN_ITEMS.md](OPEN_ITEMS.md) B-2 for product-spec status.
 
 ## When to use this
 
 Use this process when:
-- A plugin source repo (e.g. `payit2-campaign-assistant`) has shipped changes you want users to receive
+- A plugin source repo (e.g. `payit2-ai-plugin`) has shipped changes you want users to receive
 - You're adding a brand-new plugin to the marketplace catalog
 - You're rolling back the marketplace pin to an earlier tag of an already-cataloged plugin
 
@@ -25,7 +25,7 @@ Do **not** use this process for:
 
 The source repo is the canonical home of the plugin's code. Make the change there first.
 
-1. In the plugin's source repo (e.g. `payit2-campaign-assistant`), implement the change on a feature branch, open a PR, and merge to `main` per the normal workflow.
+1. In the plugin's source repo (e.g. `payit2-ai-plugin`), implement the change on a feature branch, open a PR, and merge to `main` per the normal workflow.
 2. Once the PR is merged, decide whether the change warrants a new tagged release. Tag bumping rules:
    - **Patch** (`v1.6.0` → `v1.6.1`) — bug fixes, doc-only edits, content updates, terminology fixes
    - **Minor** (`v1.6.0` → `v1.7.0`) — new skill, new agent, additive features that don't break existing usage
@@ -56,10 +56,10 @@ That command returns the SHA. Paste it into the plugin's `source.sha` field:
 
 ```json
 {
-  "name": "payit2-campaign-assistant",
+  "name": "payit2",
   "source": {
     "source": "git-subdir",
-    "url": "PayIt2/payit2-campaign-assistant",
+    "url": "PayIt2/payit2-ai-plugin",
     "path": "plugin",
     "ref": "main",
     "sha": "1c86b260738cabcc4be6fe09019fa65273041a67"
@@ -84,7 +84,7 @@ For a **new** plugin being added to the marketplace for the first time, append a
    ```
    /plugin marketplace remove PayIt2/payit2-plugins-marketplace
    /plugin marketplace add PayIt2/payit2-plugins-marketplace
-   /plugin install payit2-campaign-assistant
+   /plugin install payit2
    ```
    Confirm the installed version matches the new pinned tag (check the plugin's bundled manifest or its CHANGELOG).
 

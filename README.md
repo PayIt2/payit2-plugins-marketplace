@@ -8,19 +8,23 @@ owner: claude-maintained
 
 AI-powered Claude plugins for the [PayIt2](https://payit2.com) platform.
 
-## PayIt2 Campaign Assistant v1.6.0
+## PayIt2
 
-Your AI assistant for everything on PayIt2: fundraisers, events, and groups. Five skills and one strategy agent, with optional MCP integration for live campaign data.
+Your AI assistant for everything on PayIt2: fundraisers, events, and groups. Five skills and one strategy agent, and once you connect your PayIt2 account it works from your live campaigns. The current version is on the [latest release](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest).
 
 ### Install
 
-**Full marketplace** (recommended — includes all PayIt2 plugins):
+**Claude desktop app or claude.ai:** open Customize > Plugins, add this marketplace (`PayIt2/payit2-plugins-marketplace`), and install **PayIt2**. Then connect PayIt2 on the plugin's Connectors tab.
 
-Download [payit2-plugins-marketplace.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-plugins-marketplace.zip) and upload via Settings > Plugins > Upload to a new marketplace.
+**Claude Code:**
 
-**Single plugin:**
+```
+/plugin install payit2 --marketplace PayIt2/payit2-plugins-marketplace
+```
 
-Download [payit2-campaign-assistant-plugin.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-campaign-assistant-plugin.zip) and upload via Settings > Plugins > Upload plugin.
+Then run `/mcp`, choose the PayIt2 server and sign in.
+
+**From a zip:** download [payit2-claude-plugin.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-claude-plugin.zip) and upload it via Customize > Plugins > Add > Upload plugin. The full marketplace is also available as [payit2-plugins-marketplace.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-plugins-marketplace.zip).
 
 **Individual skills:**
 
@@ -32,7 +36,7 @@ Download [payit2-campaign-assistant-plugin.zip](https://github.com/PayIt2/payit2
 | `/engage` - participant communications | [engage-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/engage-skill.zip) |
 | campaign-context - shared context engine | [campaign-context-skill.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/campaign-context-skill.zip) |
 
-Upload any skill zip via Settings > Plugins > Upload skill.
+Upload any skill zip from Claude's Customize menu.
 
 ### Skills
 
@@ -57,11 +61,11 @@ Upload any skill zip via Settings > Plugins > Upload skill.
 
 - **5 skills:** campaign, check-in, promote, engage, and campaign-context
 - **1 agent:** campaign-assistant (Opus) for deep strategy and health analysis
-- **Optional MCP integration** for live PayIt2 API connectivity (prompts expose campaign data, tools save generated content back)
+- **The PayIt2 connector** (`https://mcp.payit2.com/mcp`): after you sign in, Claude reads your live campaigns, creates and updates them (asking before any settings change), and saves drafts to your campaign page in PayIt2. Nothing is posted or sent without you.
 
 ## Development
 
-Plugin source files live in the [payit2-campaign-assistant](https://github.com/PayIt2/payit2-campaign-assistant) repo. This repo contains only the marketplace manifest and build tooling.
+Plugin source files live in the [payit2-ai-plugin](https://github.com/PayIt2/payit2-ai-plugin) repo. This repo contains only the marketplace manifest and build tooling.
 
 To rebuild zips locally (requires the source repo cloned as a sibling):
 

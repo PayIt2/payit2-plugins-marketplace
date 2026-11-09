@@ -20,18 +20,18 @@ jobs:
 
     steps:
       # Check both repos out as siblings inside $GITHUB_WORKSPACE so that
-      # scripts/build-zips.sh can find the source at ../payit2-campaign-assistant/plugin
+      # scripts/build-zips.sh can find the source at ../payit2-ai-plugin/plugin
       # relative to the marketplace repo root.
       - name: Checkout marketplace repo
         uses: actions/checkout@v6
         with:
           path: payit2-plugins-marketplace
 
-      - name: Checkout campaign-assistant source repo
+      - name: Checkout the PayIt2 plugin source repo
         uses: actions/checkout@v6
         with:
-          repository: PayIt2/payit2-campaign-assistant
-          path: payit2-campaign-assistant
+          repository: PayIt2/payit2-ai-plugin
+          path: payit2-ai-plugin
 
       - name: Build plugin and skill zips
         working-directory: payit2-plugins-marketplace
@@ -54,7 +54,7 @@ jobs:
           TAG="${{ steps.tag.outputs.name }}"
           gh release upload "$TAG" \
             dist/payit2-plugins-marketplace.zip \
-            dist/payit2-campaign-assistant-plugin.zip --clobber
+            dist/payit2-claude-plugin.zip --clobber
 
           for zip in dist/skills/*.zip; do
             gh release upload "$TAG" "$zip" --clobber

@@ -29,11 +29,11 @@ OPEN_ITEMS.md / COMPLETED_ITEMS.md  # Canonical worklist (repo root per §14)
 .github/workflows/update-website-badge.yml  # Pushes the version badge to payit2-website on release
 ```
 
-No plugin source files live here. The build script pulls from sibling source repos (e.g. `../payit2-campaign-assistant/plugin/`).
+No plugin source files live here. The build script pulls from sibling source repos (e.g. `../payit2-ai-plugin/plugin/`).
 
 ## Building Zips
 
-Requires sibling repo `payit2-campaign-assistant` to be cloned. Then run:
+Requires sibling repo `payit2-ai-plugin` to be cloned. Then run:
 
 ```bash
 bash scripts/build-zips.sh
@@ -41,12 +41,12 @@ bash scripts/build-zips.sh
 
 Produces:
 - `dist/payit2-plugins-marketplace.zip` - full marketplace (for "Upload to a new marketplace")
-- `dist/payit2-campaign-assistant-plugin.zip` - full plugin (for "Upload plugin" flow)
+- `dist/payit2-claude-plugin.zip` - full plugin (for "Upload plugin" flow)
 - `dist/skills/<name>-skill.zip` - individual skill zips (for "Upload skill" flow)
 
 ## Adding or Updating Plugins
 
-1. Make changes in the source repo (e.g. `payit2-campaign-assistant`)
+1. Make changes in the source repo (e.g. `payit2-ai-plugin`)
 2. Update `marketplace.json` if adding a new plugin
 3. Run `bash scripts/build-zips.sh` to rebuild from source
 
