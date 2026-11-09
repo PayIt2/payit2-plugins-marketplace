@@ -6,7 +6,7 @@ owner: claude-maintained
 ---
 # Publishing Process — PayIt2-team workflow for shipping plugin updates
 
-This is the internal team workflow for releasing a new version of a plugin already in the PayIt2 marketplace. For the user-facing install instructions, see [README.md](../README.md).
+This is the internal team workflow for releasing a new version of a plugin already in the PayIt2 marketplace. For the user-facing install instructions, see [README.md](../README.md). The README names no version number on purpose: it links to the latest release, so a release never leaves it stale (it said v1.6.0 through 1.8.0 and 2.0.0).
 
 Third-party plugin submission (an external developer asking PayIt2 to include their plugin) is not implemented as a self-serve process. See [OPEN_ITEMS.md](OPEN_ITEMS.md) B-2 for product-spec status.
 
