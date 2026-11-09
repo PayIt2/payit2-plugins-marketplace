@@ -54,7 +54,7 @@ jobs:
           TAG="${{ steps.tag.outputs.name }}"
           gh release upload "$TAG" \
             dist/payit2-plugins-marketplace.zip \
-            dist/payit2-campaign-assistant-plugin.zip --clobber
+            dist/payit2-claude-plugin.zip --clobber
 
           for zip in dist/skills/*.zip; do
             gh release upload "$TAG" "$zip" --clobber

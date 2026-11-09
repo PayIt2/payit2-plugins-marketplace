@@ -41,7 +41,7 @@ bash scripts/build-zips.sh
 
 Produces:
 - `dist/payit2-plugins-marketplace.zip` - full marketplace (for "Upload to a new marketplace")
-- `dist/payit2-campaign-assistant-plugin.zip` - full plugin (for "Upload plugin" flow)
+- `dist/payit2-claude-plugin.zip` - full plugin (for "Upload plugin" flow)
 - `dist/skills/<name>-skill.zip` - individual skill zips (for "Upload skill" flow)
 
 ## Adding or Updating Plugins

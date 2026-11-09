@@ -24,7 +24,7 @@ Your AI assistant for everything on PayIt2: fundraisers, events, and groups. Fiv
 
 Then run `/mcp`, choose the PayIt2 server and sign in.
 
-**From a zip:** download [payit2-campaign-assistant-plugin.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-campaign-assistant-plugin.zip) and upload it via Customize > Plugins > Add > Upload plugin. The full marketplace is also available as [payit2-plugins-marketplace.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-plugins-marketplace.zip).
+**From a zip:** download [payit2-claude-plugin.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-claude-plugin.zip) and upload it via Customize > Plugins > Add > Upload plugin. The full marketplace is also available as [payit2-plugins-marketplace.zip](https://github.com/PayIt2/payit2-plugins-marketplace/releases/latest/download/payit2-plugins-marketplace.zip).
 
 **Individual skills:**
 

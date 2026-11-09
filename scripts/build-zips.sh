@@ -5,7 +5,7 @@
 # This script pulls from there — no plugin files are stored in this repo.
 #
 # Produces:
-#   dist/payit2-campaign-assistant-plugin.zip    — full plugin (for "Upload plugin" flow)
+#   dist/payit2-claude-plugin.zip    — full plugin (for "Upload plugin" flow)
 #   dist/payit2-plugins-marketplace.zip          — marketplace (for "Upload to a new marketplace")
 #   dist/skills/<name>-skill.zip                 — individual skill zips (for "Upload skill" flow)
 
@@ -27,12 +27,12 @@ mkdir -p "$DIST_DIR/skills"
 # --- Full plugin zip ---
 # Zip contents of source plugin directory (no wrapper folder).
 cd "$SOURCE_PLUGIN"
-zip -r "$DIST_DIR/payit2-campaign-assistant-plugin.zip" \
+zip -r "$DIST_DIR/payit2-claude-plugin.zip" \
   . \
   -x "*.DS_Store" \
   > /dev/null
 cd "$REPO_ROOT"
-echo "Built: dist/payit2-campaign-assistant-plugin.zip"
+echo "Built: dist/payit2-claude-plugin.zip"
 
 # --- Marketplace zip ---
 # Same as plugin zip but with marketplace.json added alongside plugin.json.
