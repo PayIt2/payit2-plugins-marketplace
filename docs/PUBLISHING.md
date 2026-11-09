@@ -59,7 +59,7 @@ That command returns the SHA. Paste it into the plugin's `source.sha` field:
   "name": "payit2",
   "source": {
     "source": "git-subdir",
-    "url": "PayIt2/payit2-ai-plugin",
+    "url": "https://github.com/PayIt2/payit2-ai-plugin.git",
     "path": "plugin",
     "ref": "main",
     "sha": "1c86b260738cabcc4be6fe09019fa65273041a67"
@@ -67,6 +67,8 @@ That command returns the SHA. Paste it into the plugin's `source.sha` field:
   "description": "..."
 }
 ```
+
+Write `url` as the full `https://` git URL. Claude Code clones `owner/repo` shorthand over SSH, which fails for anyone without a GitHub SSH key, including "Add to this computer" in the Claude desktop app.
 
 The `ref: "main"` field is informational (which branch the tag points at). The `sha` is the canonical pin. Claude reads `sha` and ignores `ref` if they disagree.
 
