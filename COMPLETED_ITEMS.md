@@ -12,7 +12,7 @@ Items completed from OPEN_ITEMS.md, with date and outcome.
 
 ## 2026-11-09 (install fix)
 
-- **The `payit2` entry could not be installed.** Its `git-subdir` source used the `PayIt2/payit2-ai-plugin` shorthand, which Claude Code 2.1.319 clones over SSH (`git@github.com:`), so "Add to this computer" in the Claude desktop app and `claude plugin install payit2@payit2` failed with `Permission denied (publickey)` for anyone without a GitHub SSH key. The url is now the full `https://github.com/PayIt2/payit2-ai-plugin.git`, which clones over HTTPS like every entry in Anthropic's own marketplace, and `docs/PUBLISHING.md` carries the rule. PR: fix/git-subdir-https-url.
+- **The `payit2` entry could not be installed.** Its `git-subdir` source used the `PayIt2/payit2-ai-plugin` shorthand, which Claude Code 2.1.319 clones over SSH (`git@github.com:`), so "Add to this computer" in the Claude desktop app and `claude plugin install payit2@payit2` failed with `Permission denied (publickey)` for anyone without a GitHub SSH key. The url is now the full `https://github.com/PayIt2/payit2-ai-plugin.git`, which clones over HTTPS like every entry in Anthropic's own marketplace, and `docs/PUBLISHING.md` carries the rule. PR #25.
 
 ---
 
