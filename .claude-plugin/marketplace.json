@@ -11,7 +11,7 @@
         "url": "https://github.com/PayIt2/payit2-ai-plugin.git",
         "path": "plugin",
         "ref": "main",
-        "sha": "220683b481a6ebc0da7a29192e032b9f338c09b5"
+        "sha": "1c7f8130af4fe84af2ee0c66fdb31525e75c34ba"
       },
       "description": "AI-powered campaign assistant for PayIt2.com. Create, promote, and optimize any campaign type: fundraisers, events, and groups. Get guidance, generate content, and engage participants through conversation."
     }
