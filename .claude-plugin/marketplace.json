@@ -11,9 +11,9 @@
         "url": "https://github.com/PayIt2/payit2-ai-plugin.git",
         "path": "plugin",
         "ref": "main",
-        "sha": "1c7f8130af4fe84af2ee0c66fdb31525e75c34ba"
+        "sha": "7bb1683ba1e68a5b766951bc003d9c9fc90b0cbc"
       },
-      "description": "AI-powered campaign assistant for PayIt2.com. Create, promote, and optimize any campaign type: fundraisers, events, and groups. Get guidance, generate content, and engage participants through conversation."
+      "description": "Run your PayIt2 campaigns with Claude: sell event tickets, take RSVPs, collect group payments and dues, and raise money for a cause. Build a campaign page in minutes, promote it with ready-to-post social posts and emails, see how ticket sales and donations are tracking, and thank or remind the people who signed up."
     }
   ]
 }
